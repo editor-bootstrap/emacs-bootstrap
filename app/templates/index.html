@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html>
+  <HEAD>
+    <title>Emacs Bootstrap</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link href="http://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,400,400italic" rel="stylesheet" type="text/css" />
+    <!--[if lte IE 8]><script src="/assets/css/ie/html5shiv.js"></script><![endif]-->
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/skel.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/init.js') }}"></script>
+    <script src="{{ url_for('static', filename='form.js') }}"></script>
+
+    <noscript>
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/skel-noscript.css') }}" />
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/style-wide.css') }}" />
+    </noscript>
+
+    <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie/v8.css" /><![endif]-->
+    <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie/v9.css" /><![endif]-->
+  </head>
+  <body>
+
+    <!-- Header -->
+    <section id="header" class="dark">
+      <header>
+	<h1>Emacs Bootstrap</h1>
+	<p>A generator which provides a simple method of generating a .emacs.d configuration for Emacs</p>
+      </header>
+      <footer>
+	<a href="#first" class="button scrolly">Make your .emacs.d now!</a>
+      </footer>
+    </section>
+
+    <!-- First -->
+    <section id="first" class="main">
+      <header>
+	<div class="container">
+	  <h2>Select your languages</h2>
+	  <p></p>
+	  <form class="clearfix" action="/generate" enctype="multipart/form-data" method="post">
+	    <div class="row">
+	      <div class="12u">
+		{% for lang in langs %}
+		<div class="input-group">
+		  <span class="button-checkbox">
+		    <div class="placeholder">
+		      <img class="logo-icon" data-type="checkbox" data-value="{{ lang }}" src="{{ url_for('static', filename='images/logo/') }}{{ lang }}.png">
+		    </div>
+		    <p></p>
+		    <input type="checkbox" name="langs[]" value="{{ lang }}" class="hidden" />
+		  </span>
+		</div>
+		{% endfor %}
+	      </div>
+	    </div>
+
+	    <div class="row">
+	      <div class="12u">
+		<p>Click in the button to create your .emacs.d</p><br>
+		<ul class="actions">
+		  <li><input type="submit" class="button" value="Generate!"></li>
+		</ul>
+	      </div>
+	    </div>
+	  </form>
+	</div>
+      </header>
+      <div class="content dark style1 featured">
+	<div class="container">
+	  <div class="row">
+	    <div class="4u">
+	      <section>
+		<span class="feature-icon"><span class="fa fa-clock-o"></span></span>
+		<header>
+		  <h3>Fast Installation</h3>
+		</header>
+		<p>Use your generated emacs.d file following <a href="https://github.com/avelino/emacs-bootstrap#installation">this instructions</a>.</p>
+	      </section>
+	    </div>
+	    <div class="4u">
+	      <section>
+		<span class="feature-icon"><span class="fa fa-book"></span></span>
+		<header>
+		  <h3>Learn more about Emacs</h3>
+		</header>
+		<p>See the <a href="https://github.com/rakanalh/emacs-bootstrap#commands">commands list</a>.</p>
+	      </section>
+	    </div>
+	    <div class="4u">
+	      <section>
+		<span class="feature-icon"><span class="fa fa-edit"></span></span>
+		<header>
+		  <h3>Customize your emacs</h3>
+		</header>
+		<p>Create a <a href="https://github.com/rakanalh/emacs-bootstrap/blob/master/emacs_template/emacs/init.el">~/.emacs.d/init.el</a> and customize your own configuration.</p>
+	      </section>
+	    </div>
+	  </div>
+	  <div class="row">
+	    <div class="12u">
+	      <footer>
+		<a href="https://github.com/rakanalh/emacs-bootstrap" class="button">Contribute</a>
+	      </footer>
+	    </div>
+	  </div>
+	</div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <section id="footer">
+      <ul class="icons">
+	<li><a href="https://github.com/rakanalh/emacs-bootstrap" class="fa fa-github solo"><span>GitHub</span></a></li>
+      </ul>
+      <div class="copyright">
+	<ul class="menu">
+	  <li>Inspired by <a href="http://vim-bootstrap.com/">Vim Bootstrap</a> &copy; Emacs Bootstrap. All rights reserved.</li>
+	  <li><a href="https://github.com/rakanalh/emacs-bootstrap">Emacs Bootstrap</a></li>
+	</ul>
+      </div>
+    </section>
+  </body>
+</html>
