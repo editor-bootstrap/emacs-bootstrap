@@ -52,12 +52,18 @@ def generate_configs():
         )
         init_file.write(content)
 
-    # Copy base
-    base_path = os.path.join(
-        templates_elisp_path,
-        'base.el'
-    )
-    shutil.copyfile(base_path, os.path.join(temp_elisp_dir, 'base.el'))
+    # Copy non-language files
+    base_files = [
+        'base.el',
+        'base-extensions.el',
+        'base-theme.el'
+    ]
+    for base_file in base_files:
+        base_path = os.path.join(
+            templates_elisp_path,
+            base_file
+        )
+        shutil.copyfile(base_path, os.path.join(temp_elisp_dir, base_file))
 
     for lang in languages:
         lang_filename = 'base-{}.el'.format(lang)

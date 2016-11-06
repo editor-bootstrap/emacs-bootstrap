@@ -7,6 +7,8 @@
 (add-to-list 'load-path (concat user-emacs-directory "elisp"))
 
 (require 'base)
+(require 'base-theme)
+(require 'base-extensions)
 {% for lang in langs %}
-(require 'core-{{ lang }})
+(require 'base-{{ lang }})
 {% endfor %}
