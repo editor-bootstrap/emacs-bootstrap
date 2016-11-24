@@ -34,38 +34,105 @@
       </footer>
     </section>
 
-    <!-- First -->
+    <form action="/generate" enctype="multipart/form-data" method="post">
     <section id="first" class="main">
       <header>
 	<div class="container">
 	  <h2>Select your languages</h2>
 	  <p></p>
-	  <form class="clearfix" action="/generate" enctype="multipart/form-data" method="post">
-	    <div class="row">
-	      <div class="12u">
-		{% for lang in langs %}
-		<div class="input-group">
-		  <span class="button-checkbox">
-		    <div class="placeholder">
-		      <img class="logo-icon" data-type="checkbox" data-value="{{ lang }}" src="{{ url_for('static', filename='images/logo/') }}{{ lang }}.png">
-		    </div>
-		    <p></p>
+	  <div class="row">
+	    <div class="12u">
+	      {% for lang in langs %}
+	      <div class="input-group">
+		<span class="button-checkbox">
+		  <div class="placeholder">
+		    <img class="logo-icon" data-type="checkbox" data-value="{{ lang }}" src="{{ url_for('static', filename='images/logo/') }}{{ lang }}.png">
+		  </div>
+		  <p></p>
 		    <input type="checkbox" name="langs[]" value="{{ lang }}" class="hidden" />
-		  </span>
-		</div>
-		{% endfor %}
+		</span>
 	      </div>
+	      {% endfor %}
 	    </div>
+	  </div>
+	  <div class="row">
+	    <div class="12u">
+	      <p>Click in the button to create your .emacs.d</p><br>
+	      <ul class="actions">
+		<li><input type="submit" class="button" value="Generate!"></li>
+		<li><input type="button" class="button" value="More Options" id="more-options"></li>
+	      </ul>
+	    </div>
+	  </div>
+	</div>
+      </header>
+      <header class="block-additional" style="display: none">
+	<div class="container">
+	  <h2>Select your theme</h2>
+	  <p></p>
+	  <div class="row">
+	    <div class="12u">
+	      {% for theme in themes %}
+	      <div class="input-group theme-screenshot">
+		<span class="button-checkbox">
+		  <img class="logo-icon" data-type="checkbox" data-value="{{ theme['id'] }}" src="{{ url_for('static', filename='images/themes/') }}{{ theme['id'] }}.png">
+	      	  <p>{{ theme['name'] }}</p>
+		  <input type="radio" name="theme" value="{{ theme['id'] }}" class="hidden" />
+		</span>
+	      </div>
+	      {% endfor %}
+	    </div>
+	  </div>
 
-	    <div class="row">
-	      <div class="12u">
-		<p>Click in the button to create your .emacs.d</p><br>
-		<ul class="actions">
-		  <li><input type="submit" class="button" value="Generate!"></li>
-		</ul>
+	</div>
+      </header>
+      <header class="block-additional" style="display: none">
+	<div class="container">
+	  <h2>Select your completion frontend</h2>
+	  <p></p>
+	  <div class="row">
+	    <div class="12u">
+	      {% for frontend in completion_frontends %}
+	      <div class="input-group theme-screenshot">
+		<span class="button-checkbox">
+		  <img class="logo-icon" data-type="checkbox" data-value="{{ frontend['id'] }}" src="{{ url_for('static', filename='images/frontends/') }}{{ frontend['id'] }}.png">
+	      	  <p>{{ frontend['name'] }}</p>
+		  <input type="checkbox" name="frontends[]" value="{{ frontend['id'] }}" class="hidden" />
+		</span>
 	      </div>
+	      {% endfor %}
 	    </div>
-	  </form>
+	  </div>
+
+	</div>
+      </header>
+      <header class="block-additional" style="display: none">
+	<div class="container">
+	  <h2>Select additional extensions</h2>
+	  <p></p>
+	  <div class="row">
+	    <div class="12u">
+	      {% for extension in extensions %}
+	      <div class="input-group theme-screenshot">
+		<span class="button-checkbox">
+	      	    <p><input type="checkbox" name="extensions[]" value="{{ extension['id'] }}" /> {{ extension['name'] }}</p>
+		</span>
+	      </div>
+	      {% endfor %}
+	    </div>
+	  </div>
+	</div>
+      </header>
+      <header class="block-additional" style="display:none">
+	<div class="container">
+	  <div class="row">
+	    <div class="12u">
+	      <p>Click in the button to create your .emacs.d</p><br>
+	      <ul class="actions">
+		<li><input type="submit" class="button" value="Generate!"></li>
+	      </ul>
+	    </div>
+	  </div>
 	</div>
       </header>
       <div class="content dark style1 featured">
@@ -123,4 +190,13 @@
       </div>
     </section>
   </body>
+  <script>
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+   ga('create', 'UA-87259951-1', 'auto');
+   ga('send', 'pageview');
+  </script>
 </html>

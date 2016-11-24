@@ -1256,7 +1256,7 @@ html[xmlns] .clearfix {
 		{
 			background: #fff;
 			text-align: center;
-			padding: 5em 0 5em 0;
+			padding: 2em 0 2em 0;
 			margin: 0;
 		}
 
@@ -1366,7 +1366,7 @@ html[xmlns] .clearfix {
 .input-group p {
 	margin: 0 !important;
 	padding: 0 !important;
-	font-size: 12px;
+	font-size: 14px;
 }
 
 .placeholder {
@@ -1377,6 +1377,17 @@ html[xmlns] .clearfix {
 .logo-icon{
 	opacity: .3;
 	cursor: pointer;
+}
+
+.theme-screenshot {
+    width: 25%;
+    cursor: pointer;
+}
+
+.theme-screenshot .logo-icon {
+    opacity: 0.3;
+    margin: 0px auto;
+    width: 220px;
 }
 
 .logo-icon:hover,

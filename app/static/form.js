@@ -1,5 +1,7 @@
 $(function () {
-
+  $('#more-options').click(function() {
+    $('.block-additional').show()
+  });
     $('.logo-icon').each(function() {
         $this = $(this);
 
@@ -66,6 +68,7 @@ $(function () {
                     .removeClass('btn-' + color + ' active')
                     .addClass('btn-default');
             }
+
         }
 
         // Initialization
