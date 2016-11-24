@@ -58,5 +58,5 @@
 (add-hook 'after-init-hook 'pyenv-init)
 (add-hook 'projectile-after-switch-project-hook 'pyenv-activate-current-project)
 
-(provide 'base-python)
+(provide 'lang-python)
 ;;; base-python.el ends here

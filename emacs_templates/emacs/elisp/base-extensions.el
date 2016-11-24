@@ -6,6 +6,10 @@
   :config
   (add-hook 'after-init-hook 'global-company-mode))
 
+(use-package dashboard
+  :config
+  (dashboard-setup-startup-hook))
+
 (use-package ediff
   :config
   (setq ediff-window-setup-function 'ediff-setup-windows-plain)
@@ -85,7 +89,6 @@
   (setq neo-theme 'arrow
         neotree-smart-optn t
         neo-window-fixed-size nil)
-  (neotree-projectile-action)
   ;; Disable linum for neotree
   (add-hook 'neo-after-create-hook 'disable-neotree-hook))
 

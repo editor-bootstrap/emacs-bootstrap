@@ -29,4 +29,4 @@
               (flycheck-select-checker 'jsxhint-checker)
               (flycheck-mode)))
 
-(provide 'core-web)
+(provide 'lang-web)

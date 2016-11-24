@@ -9,6 +9,9 @@
 (require 'base)
 (require 'base-theme)
 (require 'base-extensions)
-{% for lang in langs %}
-(require 'base-{{ lang }})
+(require 'base-functions)
+(require 'base-global-keys)
+(require 'base-theme)
+{% for lang in languages %}
+(require 'lang-{{ lang }})
 {% endfor %}

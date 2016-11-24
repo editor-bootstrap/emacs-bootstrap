@@ -36,4 +36,4 @@
       (set (make-local-variable 'compile-command)
            "go build -v && go test -v && go vet")))
 
-(provide 'base-go)
+(provide 'lang-go)
