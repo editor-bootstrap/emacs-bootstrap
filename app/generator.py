@@ -27,7 +27,6 @@ class TemplateGenerator:
         generated_files = self.generation_params['generated_files']
 
         for filename in generated_files:
-            print(filename)
             source_file = os.path.join(
                 self.templates_dir,
                 filename
@@ -38,13 +37,10 @@ class TemplateGenerator:
                 filename
             )
 
-            print(source_file, target_file)
-
             self.render_file(source_file, target_file)
 
         languages = self.generation_params['languages']
         for lang in languages:
-            print("LANG", lang)
             lang_file = 'lang-{}.el'.format(lang)
             source_file = os.path.join(
                  self.templates_elisp_path,
@@ -56,17 +52,12 @@ class TemplateGenerator:
                 lang_file
             )
 
-            print(source_file)
-            print(target_file, end="\n\n\n")
-
             self.render_file(source_file, target_file)
         return self.temp_dir
 
     def render_file(self, source_file, target_file):
         template_content = self._get_template(source_file)
 
-        print("11", target_file)
-        print(self.generation_params)
         self._write_template(
             target_file,
             template_content,
@@ -74,14 +65,11 @@ class TemplateGenerator:
         )
 
     def _get_template(self, filename):
-        print("Get template: %s" % filename)
         with open(filename) as template:
             content = template.read()
         return content
 
     def _write_template(self, filename, template_content, **kwargs):
-        print("22", filename)
-        print("\n\n")
         with open(filename, 'w+') as template_file:
             content = render_template_string(
                 template_content,

@@ -34,7 +34,7 @@
       </footer>
     </section>
 
-    <form action="/generate" enctype="multipart/form-data" method="post">
+    <form action="/generate" method="post">
     <section id="first" class="main">
       <header>
 	<div class="container">
@@ -44,12 +44,12 @@
 	    <div class="12u">
 	      {% for lang in langs %}
 	      <div class="input-group">
-		<span class="button-checkbox">
+		<span class="button-checkbox" data-component="language">
 		  <div class="placeholder">
-		    <img class="logo-icon" data-type="checkbox" data-value="{{ lang }}" src="{{ url_for('static', filename='images/logo/') }}{{ lang }}.png">
+		    <img class="logo-icon" data-component="language" data-type="checkbox" data-value="{{ lang }}" src="{{ url_for('static', filename='images/logo/') }}{{ lang }}.png" />
 		  </div>
 		  <p></p>
-		    <input type="checkbox" name="langs[]" value="{{ lang }}" class="hidden" />
+		  <input type="checkbox" data-component="language" name="langs" value="{{ lang }}" class="hidden" />
 		</span>
 	      </div>
 	      {% endfor %}
@@ -74,16 +74,15 @@
 	    <div class="12u">
 	      {% for theme in themes %}
 	      <div class="input-group theme-screenshot">
-		<span class="button-checkbox">
-		  <img class="logo-icon" data-type="checkbox" data-value="{{ theme['id'] }}" src="{{ url_for('static', filename='images/themes/') }}{{ theme['id'] }}.png">
-	      	  <p>{{ theme['name'] }}</p>
-		  <input type="radio" name="theme" value="{{ theme['id'] }}" class="hidden" />
+		<span class="button-checkbox" data-component="theme">
+		  <img class="logo-icon{% if theme['default'] %} selected{% else %}{% endif %}" data-component="theme" src="{{ url_for('static', filename='images/themes/') }}{{ theme['id'] }}.png" />
+	      	  <p><a href="{{ theme['url'] }}" target="_blank">{{ theme['name'] }}</a></p>
+		  <input type="radio" name="theme" value="{{ theme['id'] }}" class="hidden" {% if theme['default'] %}checked="checked"{% endif %} data-component="theme" />
 		</span>
 	      </div>
 	      {% endfor %}
 	    </div>
 	  </div>
-
 	</div>
       </header>
       <header class="block-additional" style="display: none">
@@ -94,28 +93,10 @@
 	    <div class="12u">
 	      {% for frontend in completion_frontends %}
 	      <div class="input-group theme-screenshot">
-		<span class="button-checkbox">
-		  <img class="logo-icon" data-type="checkbox" data-value="{{ frontend['id'] }}" src="{{ url_for('static', filename='images/frontends/') }}{{ frontend['id'] }}.png">
-	      	  <p>{{ frontend['name'] }}</p>
-		  <input type="checkbox" name="frontends[]" value="{{ frontend['id'] }}" class="hidden" />
-		</span>
-	      </div>
-	      {% endfor %}
-	    </div>
-	  </div>
-
-	</div>
-      </header>
-      <header class="block-additional" style="display: none">
-	<div class="container">
-	  <h2>Select additional extensions</h2>
-	  <p></p>
-	  <div class="row">
-	    <div class="12u">
-	      {% for extension in extensions %}
-	      <div class="input-group theme-screenshot">
-		<span class="button-checkbox">
-	      	    <p><input type="checkbox" name="extensions[]" value="{{ extension['id'] }}" /> {{ extension['name'] }}</p>
+		<span class="button-checkbox" data-component="frontend">
+		  <img class="logo-icon{% if frontend['default'] %} selected{% else %}{% endif %}" data-component="frontend" src="{{ url_for('static', filename='images/frontends/') }}{{ frontend['id'] }}.png" />
+	      	  <p><a href="{{ frontend['url'] }}" target="_blank">{{ frontend['name'] }}</a></p>
+		  <input type="radio" name="frontend" value="{{ frontend['id'] }}" class="hidden" {% if frontend['default'] %}checked="checked"{% endif %} data-component="frontend" />
 		</span>
 	      </div>
 	      {% endfor %}
@@ -176,7 +157,7 @@
 	</div>
       </div>
     </section>
-
+    </form>
     <!-- Footer -->
     <section id="footer">
       <ul class="icons">

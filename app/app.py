@@ -3,6 +3,7 @@ import shutil
 from flask import (
     Flask,
     request,
+    Response,
     render_template,
     send_from_directory
 )
@@ -21,16 +22,17 @@ def index():
         langs=app.config['LANGS'],
         themes=app.config['THEMES'],
         completion_frontends=app.config['COMPLETION_FORNTENDS'],
-        extensions=app.config['EXTENSIONS']
     )
 
 
 @app.route('/generate', methods=['POST'])
 def generate_configs():
-    languages = request.form.getlist('langs[]')
-    theme = request.form.get('theme')
-    frontend = request.form.get('frontend')
-    extensions = request.form.getlist('extensions[]')
+    theme = request.form.get('theme', None)
+    frontend = request.form.get('frontend', None)
+    languages = request.form.getlist('langs')
+
+    if not all([languages, theme, frontend]):
+        return Response("All fields are mandatory", 400)
 
     templates_path = os.path.join(
         app.config['EMACS_TEMPLATES_PATH'],
@@ -41,7 +43,6 @@ def generate_configs():
     generator.set_param('languages', languages)
     generator.set_param('theme', theme)
     generator.set_param('theme_package', _get_theme_package(theme))
-    generator.set_param('extensions', extensions)
     generator.set_param('frontend', frontend)
     generator.set_param('generated_files', app.config['GENERATED_FILES'])
     directory = generator.generate_files()
