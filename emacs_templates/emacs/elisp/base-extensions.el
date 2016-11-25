@@ -30,6 +30,7 @@
 
 (use-package flycheck)
 
+{% if frontend == 'ivy' %}
 (use-package counsel
   :bind
   ("M-x" . counsel-M-x)
@@ -52,6 +53,38 @@
   (ivy-mode 1)
   (setq ivy-use-virtual-buffers nil)
   (define-key read-expression-map (kbd "C-r") 'counsel-expression-history))
+{% else %}
+(use-package helm
+  :init
+  (require 'helm-config)
+  :config
+  (setq helm-split-window-in-side-p t
+        helm-split-window-default-side 'below
+	helm-idle-delay 0.0
+	helm-input-idle-delay 0.01
+	helm-quick-update t
+	helm-ff-skip-boring-files t)
+  (helm-mode 1)
+  :bind (("M-x" . helm-M-x)
+         ("C-x C-m" . helm-M-x)
+         ("C-x C-f" . helm-find-files)
+         ("C-x v" . helm-projectile)
+         ("C-x c o" . helm-occur)
+         ("C-x c p" . helm-projectile-ag)
+         ("C-x c k" . helm-show-kill-ring)
+         :map helm-map
+         ("<tab>" . helm-execute-persistent-action)))
+
+(use-package helm-ag)
+
+(use-package helm-git-grep)
+
+(use-package helm-projectile)
+
+(use-package helm-swoop
+  :bind
+  ("C-x c s" . helm-swoop))
+{% endif %}
 
 (use-package hlinum
   :config
@@ -64,7 +97,9 @@
 
 (use-package magit
   :config
+  {% if frontend == 'ivy' %}
   (setq magit-completing-read-function 'ivy-completing-read)
+  {% endif %}
   :bind
   ;; Magic
   ("C-x g s" . magit-status)
@@ -119,7 +154,9 @@
   :config
   (setq projectile-known-projects-file
         (expand-file-name "projectile-bookmarks.eld" temp-dir))
+  {% if frontend == 'ivy' %}
   (setq projectile-completion-system 'ivy)
+  {% endif %}
   (projectile-global-mode))
 
 (use-package recentf
