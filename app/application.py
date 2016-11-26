@@ -11,21 +11,21 @@ from flask import (
 from app.generator import TemplateGenerator
 
 
-app = Flask(__name__)
-app.config.from_pyfile('config.cfg')
+flask_app = Flask(__name__)
+flask_app.config.from_pyfile('config.cfg')
 
 
-@app.route('/')
+@flask_app.route('/')
 def index():
     return render_template(
         'index.html',
-        langs=app.config['LANGS'],
-        themes=app.config['THEMES'],
-        completion_frontends=app.config['COMPLETION_FORNTENDS'],
+        langs=flask_app.config['LANGS'],
+        themes=flask_app.config['THEMES'],
+        completion_frontends=flask_app.config['COMPLETION_FORNTENDS'],
     )
 
 
-@app.route('/generate', methods=['POST'])
+@flask_app.route('/generate', methods=['POST'])
 def generate_configs():
     theme = request.form.get('theme', None)
     frontend = request.form.get('frontend', None)
@@ -35,8 +35,8 @@ def generate_configs():
         return Response("All fields are mandatory", 400)
 
     templates_path = os.path.join(
-        app.config['EMACS_TEMPLATES_PATH'],
-        app.config['DEFAULT_EDITOR']
+        flask_app.config['EMACS_TEMPLATES_PATH'],
+        flask_app.config['DEFAULT_EDITOR']
     )
 
     generator = TemplateGenerator(templates_path)
@@ -44,7 +44,7 @@ def generate_configs():
     generator.set_param('theme', theme)
     generator.set_param('theme_package', _get_theme_package(theme))
     generator.set_param('frontend', frontend)
-    generator.set_param('generated_files', app.config['GENERATED_FILES'])
+    generator.set_param('generated_files', flask_app.config['GENERATED_FILES'])
     directory = generator.generate_files()
 
     shutil.make_archive(
@@ -57,7 +57,7 @@ def generate_configs():
 
 
 def _get_theme_package(theme_name):
-    themes = app.config['THEMES']
+    themes = flask_app.config['THEMES']
     for theme in themes:
         if theme['id'] == theme_name:
             return theme['pkg']
