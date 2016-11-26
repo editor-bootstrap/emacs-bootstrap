@@ -1,0 +1,113 @@
+# emacs-bootstrap
+* Emacs Bootstrap
+
+http://www.emacs-bootstrap.com
+
+Your on-the-fly Emacs development environment.
+
+Emacs-bootstrap uses opinionated code templates which will be used to generate your emacs configurations.
+It enables you to select the programming languages you work with the most and will generate enough Emacs configs
+to get you started crunching code.
+
+* Features
+  1. Multiple programming languages available
+  2. Theme selection
+  3. Completion frontend installation
+
+* Installation
+
+Head over to [[http://www.emacs-bootstrap.com][Emacs-bootstrap]] and generate your configs.
+Once you've download the configs, unzip the file and:
+#+BEGIN_SRC shell
+cp -R [CONFIG_DOWNLOAD_DIR] ~/.emacs.d
+#+END_SRC
+Then launch emacs and wait for a bit while Emacs packages are installed to prepare your environment.
+
+* Shortcuts
+Here are some basic shortcuts that Emacs provides along with configured shortcuts by Emacs-bootstrap:
+
+Note that C- means pressing your Control key + some other key. For example, C-x means Control + X.
+Same goes for M which is your Meta key. That can be the Escape key on your keyboard or the ALT key.
+
+|----------+----------------------+----------|
+| Shortcut | Function             | Provider |
+|----------+----------------------+----------|
+| C-x C-f  | Open file            | Emacs    |
+| C-x C-s  | Save file            | Emacs    |
+| C-x C-b  | Switch buffer        | Emacs    |
+| C-x C-k  | Kill buffer          | Emacs    |
+| C-s      | Search in file       | Emacs    |
+| M-%      | Find and Replace     | Emacs    |
+| C-x 1    | Only show 1 buffer   | Emacs    |
+| C-x 2    | Split horizontally   | Emacs    |
+| C-x 3    | Split Vertically     | Emacs    |
+| C-x 0    | Remove current split | Emacs    |
+|----------+----------------------+----------|
+
+One of the packages installed is called 'which-key' which displays the list of available keys after a certain prefix.
+Try it out, press C-x and which-key will display available shortcuts that you can use to invoke a certain functionality.
+
+|------------------+------------------------------------------+-------------------------------------|
+| Shortcut         | Function                                 | Provider / Package                  |
+|------------------+------------------------------------------+-------------------------------------|
+| C-C Space        | Ace-jump-mode (Code navigation)          | Bootstrap / Ace-Jump                |
+| C-=              | Expand Region (Smart code selection)     | Bootstrap / Expand-region           |
+| M-x or (C-x C-m) | Ivy-counsel / Helm (Completion frontend) | Bootstrap / Ivy / Helm              |
+| C-x c k          | Emacs kill ring (Emacs clipboard)        | Bootstrap / Ivy / Helm              |
+| C-x v            | Open file in project                     | Bootstrap / Projectile              |
+| C-x c p          | Search in project                        | Bootstrap / Projectile-ag           |
+| C-x s            | Advanced search in file                  | Bootstrap / Ivy-swiper / Helm-swoop |
+| C-x UP           | Go to buffer above (In split)            | Bootstrap / Windmove                |
+| C-x Down         | Go to buffer below (In split)            | Bootstrap / Windmove                |
+| C-x Left         | Go to buffer on the left (In split)      | Bootstrap / Windmove                |
+| C-x Right        | Go to buffer on the right (In split)     | Bootstrap / Windmove                |
+|------------------+------------------------------------------+-------------------------------------|
+
+Programming language specific shortcuts:
+
+|------------------+------------------------------------------+-------------------------------------+--------------------------|
+| Shortcut         | Function                                 | Programming Language                | Provider / Package       |
+|------------------+------------------------------------------+-------------------------------------+--------------------------|
+| C-x p e          | Pyenv activate in current project        | Python                              | python-mode, elpy, pyenv |
+| M-.              | Go to definition                         | Python                              | python-mode, elpy, pyenv |
+| M-,              | Navigate back to previous position       | Python                              | python-mode, elpy, pyenv |
+|                  |                                          |                                     |                          |
+| C-c C-r          | Remove unused imports                    | Golang                              | go-mode                  |
+| C-c C-g          | Go to imports                            | Golang                              | go-mode                  |
+| M-.              | Go to defintion                          | Golang                              | go-mode                  |
+|------------------+------------------------------------------+-------------------------------------+--------------------------|
+
+* Awesome Emacs Learning Resources
+**** Using Emacs (http://cestlaz.github.io/stories/emacs/)
+**** Emacs Rocks (http://emacsrocks.com/)
+**** Endless Parenthesis (http://endlessparentheses.com/)
+**** What the emacs.d? (http://whattheemacsd.com/)
+**** Awesome Emacs (https://github.com/emacs-tw/awesome-emacs)
+
+* Contribution
+
+I would love to extend Emacs-bootstrap to support other programming languages as well.
+If you think you've got your configuration of your favorite programming language perfectly,
+please don't hesitate to submit a PR.
+
+TODO Languages:
+- [ ] Ruby
+- [ ] PHP
+- [ ] Elixir
+- [ ] Rust
+- [ ] Other demanded languages
+
+TODO - Language Specific Tasks:
+- [ ] C/C++ - Test & Document shortcuts
+- [ ] Python - Support venv
+
+* Credit
+
+Special thanks for [[https://github.com/avelino][Thiago Avelino]] for allowing the usage of Vim-Bootstrap's template. And [[http://faisal.me/][Faisal Al-Da'aja]] for customizing the look and feel.
+
+* Dedication
+
+This website is dedicated to my lovely Wife who became curious about Emacs after i bragged so much about it.
+
+* License
+MIT License
