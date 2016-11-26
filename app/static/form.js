@@ -24,4 +24,14 @@ $(function () {
       }
     });
   });
+  $('input[type="submit"]').click(function() {
+    var _this = this;
+    ga('send', 'event', 'Generate', 'Submit', {
+      'hitCallback': function() {
+        $(_this).parents('form').first().submit();
+      }
+    });
+
+    return !window.ga;
+  });
 });
