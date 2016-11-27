@@ -85,16 +85,17 @@ Programming language specific shortcuts:
 
 * Awesome Emacs Learning Resources
 *** Reading content
-**** Thttp://emacs.readthedocs.io/en/latest/
-**** Endless Parenthesis (http://endlessparentheses.com/)
-**** What the emacs.d? (http://whattheemacsd.com/)
+    - Thttp://emacs.readthedocs.io/en/latest/
+    - Endless Parenthesis (http://endlessparentheses.com/)
+    - What the emacs.d? (http://whattheemacsd.com/)
+    - Pragmatic emacs (http://pragmaticemacs.com)
+    - Planet emacsen (http://planet.emacsen.org/)
 *** Video Content:
-**** Using Emacs (http://cestlaz.github.io/stories/emacs/)
-**** Emacs Rocks (http://emacsrocks.com/)
+    - Using Emacs (http://cestlaz.github.io/stories/emacs/)
+    - Emacs Rocks (http://emacsrocks.com/)
 *** Other
-**** Awesome Emacs (https://github.com/emacs-tw/awesome-emacs)
-**** Pragmatic emacs (http://pragmaticemacs.com)
-**** Planet emacsen (http://planet.emacsen.org/)
+    - Awesome Emacs (https://github.com/emacs-tw/awesome-emacs)
+
 
 * Contribution
 
