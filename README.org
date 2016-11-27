@@ -78,10 +78,14 @@ Programming language specific shortcuts:
 |------------------+------------------------------------------+-------------------------------------+--------------------------|
 
 * Awesome Emacs Learning Resources
-**** Using Emacs (http://cestlaz.github.io/stories/emacs/)
-**** Emacs Rocks (http://emacsrocks.com/)
+*** Reading content
+**** Thttp://emacs.readthedocs.io/en/latest/
 **** Endless Parenthesis (http://endlessparentheses.com/)
 **** What the emacs.d? (http://whattheemacsd.com/)
+*** Video Content:
+**** Using Emacs (http://cestlaz.github.io/stories/emacs/)
+**** Emacs Rocks (http://emacsrocks.com/)
+*** Other
 **** Awesome Emacs (https://github.com/emacs-tw/awesome-emacs)
 
 * Contribution
