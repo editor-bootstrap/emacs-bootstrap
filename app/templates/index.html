@@ -47,6 +47,7 @@
 		<span class="button-checkbox" data-component="language">
 		  <div class="placeholder">
 		    <img class="logo-icon" data-component="language" data-type="checkbox" data-value="{{ lang }}" src="{{ url_for('static', filename='images/logo/') }}{{ lang }}.png" />
+		    <p>{{ lang|capitalize }}</p>
 		  </div>
 		  <p></p>
 		  <input type="checkbox" data-component="language" name="langs" value="{{ lang }}" class="hidden" />
