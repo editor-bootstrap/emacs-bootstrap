@@ -90,16 +90,7 @@ I would love to extend Emacs-bootstrap to support other programming languages as
 If you think you've got your configuration of your favorite programming language perfectly,
 please don't hesitate to submit a PR.
 
-TODO Languages:
-- [ ] Ruby
-- [ ] PHP
-- [ ] Elixir
-- [ ] Rust
-- [ ] Other demanded languages
-
-TODO - Language Specific Tasks:
-- [ ] C/C++ - Test & Document shortcuts
-- [ ] Python - Support venv
+Please check the list of issues as i have created am issue for the missing language support Emacs-Bootstrap lacks.
 
 * Credit
 
