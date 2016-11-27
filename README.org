@@ -65,17 +65,23 @@ Try it out, press C-x and which-key will display available shortcuts that you ca
 
 Programming language specific shortcuts:
 
-|------------------+------------------------------------------+-------------------------------------+--------------------------|
-| Shortcut         | Function                                 | Programming Language                | Provider / Package       |
-|------------------+------------------------------------------+-------------------------------------+--------------------------|
-| C-x p e          | Pyenv activate in current project        | Python                              | python-mode, elpy, pyenv |
-| M-.              | Go to definition                         | Python                              | python-mode, elpy, pyenv |
-| M-,              | Navigate back to previous position       | Python                              | python-mode, elpy, pyenv |
-|                  |                                          |                                     |                          |
-| C-c C-r          | Remove unused imports                    | Golang                              | go-mode                  |
-| C-c C-g          | Go to imports                            | Golang                              | go-mode                  |
-| M-.              | Go to defintion                          | Golang                              | go-mode                  |
-|------------------+------------------------------------------+-------------------------------------+--------------------------|
+|----------+----------------------------------------------------------+----------------------+--------------------------+---|
+| Shortcut | Function                                                 | Programming Language | Provider / Package       |   |
+|----------+----------------------------------------------------------+----------------------+--------------------------+---|
+| C-x p e  | Pyenv activate in current project                        | Python               | python-mode, elpy, pyenv |   |
+| M-.      | Go to definition                                         | Python               | python-mode, elpy, pyenv |   |
+| M-,      | Navigate back to previous position                       | Python               | python-mode, elpy, pyenv |   |
+|          |                                                          |                      |                          |   |
+| C-c C-r  | Remove unused imports                                    | Golang               | go-mode                  |   |
+| C-c C-g  | Go to imports                                            | Golang               | go-mode                  |   |
+| M-.      | Go to defintion                                          | Golang               | go-mode                  |   |
+|          |                                                          |                      |                          |   |
+| C-c j r  | JavaScript refactor mode                                 | JavaScript           | js2-mode, js2-refactor   |   |
+| C-c C-b  | Send the buffer to the inferior JavaScript process       | JavaScript           | js2-mode, js-comint      |   |
+| C-c C-l  | Load a file in the javaScript interpreter                | JavaScript           | js2-mode, js-comint      |   |
+| C-x C-e  | Send previous sexp to inferior JavaScript process        | JavaScript           | js2-mode, js-comint      |   |
+| C-M-x    | Send previous sexp to inferior JavaScript process and go | JavaScript           | js2-mode, js-comint      |   |
+|----------+----------------------------------------------------------+----------------------+--------------------------+---|
 
 * Awesome Emacs Learning Resources
 *** Reading content
@@ -87,6 +93,8 @@ Programming language specific shortcuts:
 **** Emacs Rocks (http://emacsrocks.com/)
 *** Other
 **** Awesome Emacs (https://github.com/emacs-tw/awesome-emacs)
+**** Pragmatic emacs (http://pragmaticemacs.com)
+**** Planet emacsen (http://planet.emacsen.org/)
 
 * Contribution
 
