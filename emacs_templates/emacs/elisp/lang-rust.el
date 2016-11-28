@@ -3,23 +3,19 @@
 ;; rust-mode
 ;; https://github.com/rust-lang/rust-mode
 (use-package rust-mode
-  :ensure t
   :config
   (progn
     ;; add flycheck support for rust
     ;; https://github.com/flycheck/flycheck-rust
-    (use-package flycheck-rust
-    :ensure t)
+    (use-package flycheck-rust)
 
     ;; cargo-mode for all the cargo related operations
     ;; https://github.com/kwrooijen/cargo.el
-    (use-package cargo
-    :ensure t)
+    (use-package cargo)
 
     ;; racer-mode for getting IDE like features for rust-mode
     ;; https://github.com/racer-rust/emacs-racer
     (use-package racer
-      :ensure t
       :bind (("C-c C-t" . racer-describe))
       :config
       (progn

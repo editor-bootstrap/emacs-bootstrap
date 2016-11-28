@@ -65,23 +65,27 @@ Try it out, press C-x and which-key will display available shortcuts that you ca
 
 Programming language specific shortcuts:
 
-|----------+----------------------------------------------------------+----------------------+--------------------------+---|
-| Shortcut | Function                                                 | Programming Language | Provider / Package       |   |
-|----------+----------------------------------------------------------+----------------------+--------------------------+---|
-| C-x p e  | Pyenv activate in current project                        | Python               | python-mode, elpy, pyenv |   |
-| M-.      | Go to definition                                         | Python               | python-mode, elpy, pyenv |   |
-| M-,      | Navigate back to previous position                       | Python               | python-mode, elpy, pyenv |   |
-|          |                                                          |                      |                          |   |
-| C-c C-r  | Remove unused imports                                    | Golang               | go-mode                  |   |
-| C-c C-g  | Go to imports                                            | Golang               | go-mode                  |   |
-| M-.      | Go to defintion                                          | Golang               | go-mode                  |   |
-|          |                                                          |                      |                          |   |
-| C-c j r  | JavaScript refactor mode                                 | JavaScript           | js2-mode, js2-refactor   |   |
-| C-c C-b  | Send the buffer to the inferior JavaScript process       | JavaScript           | js2-mode, js-comint      |   |
-| C-c C-l  | Load a file in the javaScript interpreter                | JavaScript           | js2-mode, js-comint      |   |
-| C-x C-e  | Send previous sexp to inferior JavaScript process        | JavaScript           | js2-mode, js-comint      |   |
-| C-M-x    | Send previous sexp to inferior JavaScript process and go | JavaScript           | js2-mode, js-comint      |   |
-|----------+----------------------------------------------------------+----------------------+--------------------------+---|
+|----------+----------------------------------------------------------+----------------------+--------------------------|
+| Shortcut | Function                                                 | Programming Language | Provider / Package       |
+|----------+----------------------------------------------------------+----------------------+--------------------------|
+| C-x p e  | Pyenv activate in current project                        | Python               | python-mode, elpy, pyenv |
+| M-.      | Go to definition                                         | Python               | python-mode, elpy, pyenv |
+| M-,      | Navigate back to previous position                       | Python               | python-mode, elpy, pyenv |
+|          |                                                          |                      |                          |
+| C-c C-r  | Remove unused imports                                    | Golang               | go-mode                  |
+| C-c C-g  | Go to imports                                            | Golang               | go-mode                  |
+| M-.      | Go to defintion                                          | Golang               | go-mode                  |
+|          |                                                          |                      |                          |
+| C-c j r  | JavaScript refactor mode                                 | JavaScript           | js2-mode, js2-refactor   |
+| C-c C-b  | Send the buffer to the inferior JavaScript process       | JavaScript           | js2-mode, js-comint      |
+| C-c C-l  | Load a file in the javaScript interpreter                | JavaScript           | js2-mode, js-comint      |
+| C-x C-e  | Send previous sexp to inferior JavaScript process        | JavaScript           | js2-mode, js-comint      |
+| C-M-x    | Send previous sexp to inferior JavaScript process and go | JavaScript           | js2-mode, js-comint      |
+|          |                                                          |                      |                          |
+| C-j      | emmet-mode expand snippet                                | HTML                 | web-mode, emmet-mode     |
+| C-c [    | emmet-mode previous edit point                           | HTML                 | web-mode, emmet-mode     |
+| C-c ]    | emmet-mode next edit point                               | HTML                 | web-mode, emmet-mode     |
+|----------+----------------------------------------------------------+----------------------+--------------------------|
 
 * Awesome Emacs Learning Resources
 *** Reading content
@@ -103,7 +107,20 @@ I would love to extend Emacs-bootstrap to support other programming languages as
 If you think you've got your configuration of your favorite programming language perfectly,
 please don't hesitate to submit a PR.
 
+<<<<<<< HEAD
+TODO Languages:
+- [ ] Ruby
+- [ ] PHP
+- [ ] Elixir
+- [X] Rust
+- [ ] Other demanded languages
+
+TODO - Language Specific Tasks:
+- [ ] C/C++ - Test & Document shortcuts
+- [ ] Python - Support venv
+=======
 Please check the list of issues as i have created am issue for the missing language support Emacs-Bootstrap lacks.
+>>>>>>> upstream/master
 
 * Credit
 
