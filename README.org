@@ -89,7 +89,7 @@ Programming language specific shortcuts:
 
 * Awesome Emacs Learning Resources
 *** Reading content
-    - Thttp://emacs.readthedocs.io/en/latest/
+    - Emacs RTD (http://emacs.readthedocs.io/en/latest/)
     - Endless Parenthesis (http://endlessparentheses.com/)
     - What the emacs.d? (http://whattheemacsd.com/)
     - Pragmatic emacs (http://pragmaticemacs.com)
@@ -107,20 +107,7 @@ I would love to extend Emacs-bootstrap to support other programming languages as
 If you think you've got your configuration of your favorite programming language perfectly,
 please don't hesitate to submit a PR.
 
-<<<<<<< HEAD
-TODO Languages:
-- [ ] Ruby
-- [ ] PHP
-- [ ] Elixir
-- [X] Rust
-- [ ] Other demanded languages
-
-TODO - Language Specific Tasks:
-- [ ] C/C++ - Test & Document shortcuts
-- [ ] Python - Support venv
-=======
 Please check the list of issues as i have created am issue for the missing language support Emacs-Bootstrap lacks.
->>>>>>> upstream/master
 
 * Credit
 
