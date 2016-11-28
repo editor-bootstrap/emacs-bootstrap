@@ -15,18 +15,23 @@
         web-mode-css-indent-offset 2
         web-mode-code-indent-offset 2)
 
-  (add-hook 'web-mode-hook 'jsx-flycheck))
+  (add-hook 'web-mode-hook 'jsx-flycheck)
+  (add-hook 'web-mode-hook 'emmet-mode)
+  (add-hook 'web-mode-hook 'company-mode)
 
-(defadvice web-mode-highlight-part (around tweak-jsx activate)
-  (if (equal web-mode-content-type "jsx")
-      (let ((web-mode-enable-part-face nil))
-        ad-do-it)
-    ad-do-it))
+  ;; highlight enclosing tags of the element under cursor
+  (setq web-mode-enable-current-element-highlight t)
 
-(defun jsx-flycheck ()
-  (when (equal web-mode-content-type "jsx")
-              ;; enable flycheck
-              (flycheck-select-checker 'jsxhint-checker)
-              (flycheck-mode)))
+  (defadvice web-mode-highlight-part (around tweak-jsx activate)
+    (if (equal web-mode-content-type "jsx")
+        (let ((web-mode-enable-part-face nil))
+          ad-do-it)
+      ad-do-it))
+
+  (defun jsx-flycheck ()
+    (when (equal web-mode-content-type "jsx")
+      ;; enable flycheck
+      (flycheck-select-checker 'jsxhint-checker)
+      (flycheck-mode))))
 
 (provide 'lang-web)
