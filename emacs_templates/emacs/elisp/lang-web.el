@@ -85,4 +85,10 @@
   (add-hook 'css-mode-hook 'my-css-mode-hook)
   (add-hook 'css-mode-hook 'company-mode))
 
+;; impatient mode - Live refresh of web pages
+;; https://github.com/skeeto/impatient-mode
+(use-package impatient-mode
+  :diminish (impatient-mode . " i")
+  :commands (impatient-mode))
+
 (provide 'lang-web)
