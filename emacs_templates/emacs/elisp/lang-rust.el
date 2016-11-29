@@ -3,6 +3,8 @@
 ;; rust-mode
 ;; https://github.com/rust-lang/rust-mode
 (use-package rust-mode
+  :bind ( :map rust-mode-map
+         (("C-c C-t" . racer-describe)))
   :config
   (progn
     ;; add flycheck support for rust
@@ -16,7 +18,6 @@
     ;; racer-mode for getting IDE like features for rust-mode
     ;; https://github.com/racer-rust/emacs-racer
     (use-package racer
-      :bind (("C-c C-t" . racer-describe))
       :config
       (progn
         ;; set racer rust source path environment variable
