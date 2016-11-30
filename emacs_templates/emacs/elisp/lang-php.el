@@ -8,7 +8,7 @@
 	    '(lambda ()
 	       (require 'company-php)
 	       (company-mode t)
-	       (add-to-list 'company-backends 'company-ac-php-backend ))))
+	       (add-to-list 'company-backends 'company-ac-php-backend))))
 
 (use-package phpunit
   :mode
