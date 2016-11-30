@@ -166,6 +166,8 @@
 
 (use-package smartparens)
 
+(use-package smex)
+
 (use-package undo-tree
   :config
   (global-undo-tree-mode 1))
