@@ -1,6 +1,12 @@
+{% if frontend == 'ivy' %}
+(use-package avy
+  :bind
+  ("C-c SPC" . avy-goto-char))
+{% else %}
 (use-package ace-jump-mode
   :bind
   ("C-c SPC" . ace-jump-mode))
+{% endif %}
 
 (use-package company
   :config
