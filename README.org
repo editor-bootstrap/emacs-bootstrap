@@ -1,7 +1,7 @@
 # emacs-bootstrap
 * Emacs Bootstrap
 
-http://www.emacs-bootstrap.com
+http://emacs-bootstrap.com
 
 Your on-the-fly Emacs development environment.
 
@@ -16,7 +16,7 @@ to get you started crunching code.
 
 * Installation
 
-Head over to [[http://www.emacs-bootstrap.com][Emacs-bootstrap]] and generate your configs.
+Head over to [[http://emacs-bootstrap.com][Emacs-bootstrap]] and generate your configs.
 Once you've download the configs, unzip the file and:
 #+BEGIN_SRC shell
 cp -R [CONFIG_DOWNLOAD_DIR] ~/.emacs.d
@@ -85,6 +85,7 @@ Programming language specific shortcuts:
 | C-j      | emmet-mode expand snippet                                | HTML                 | web-mode, emmet-mode     |
 | C-c [    | emmet-mode previous edit point                           | HTML                 | web-mode, emmet-mode     |
 | C-c ]    | emmet-mode next edit point                               | HTML                 | web-mode, emmet-mode     |
+| C-c o b  | Open the current file in the browser                     | HTML                 | web-mode                 |
 |----------+----------------------------------------------------------+----------------------+--------------------------|
 
 * Awesome Emacs Learning Resources

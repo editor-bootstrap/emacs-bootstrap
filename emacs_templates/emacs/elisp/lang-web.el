@@ -1,4 +1,7 @@
 (use-package web-mode
+  :bind (("C-c ]" . emmet-next-edit-point)
+         ("C-c [" . emmet-prev-edit-point)
+         ("C-c o b" . browse-url-of-file))
   :mode
   (("\\.js\\'" . web-mode)
    ("\\.html?\\'" . web-mode)
@@ -41,9 +44,7 @@
   ;; https://github.com/smihica/emmet-mode
   (use-package emmet-mode
     :init (setq emmet-move-cursor-between-quotes t) ;; default nil
-    :diminish (emmet-mode . " e")
-    :bind (("C-c ]" . emmet-next-edit-point)
-           ("C-c [" . emmet-prev-edit-point)))
+    :diminish (emmet-mode . " e"))
   (add-hook 'web-mode-hook 'emmet-mode)
 
   (defun my-web-mode-hook ()
