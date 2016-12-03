@@ -43,7 +43,7 @@
   ;; js2-refactor :- refactoring options for emacs
   ;; https://github.com/magnars/js2-refactor.el
   (use-package js2-refactor :defer t
-    :diminish js2-refactor
+    :diminish js2-refactor-mode
     :config
     (js2r-add-keybindings-with-prefix "C-c j r"))
   (add-hook 'js2-mode-hook 'js2-refactor-mode))
