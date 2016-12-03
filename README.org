@@ -1,7 +1,7 @@
 # emacs-bootstrap
 * Emacs Bootstrap
 
-http://www.emacs-bootstrap.com
+http://emacs-bootstrap.com
 
 Your on-the-fly Emacs development environment.
 
@@ -16,7 +16,7 @@ to get you started crunching code.
 
 * Installation
 
-Head over to [[http://www.emacs-bootstrap.com][Emacs-bootstrap]] and generate your configs.
+Head over to [[http://emacs-bootstrap.com][Emacs-bootstrap]] and generate your configs.
 Once you've download the configs, unzip the file and:
 #+BEGIN_SRC shell
 cp -R [CONFIG_DOWNLOAD_DIR] ~/.emacs.d

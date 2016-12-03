@@ -1,6 +1,12 @@
+{% if frontend == 'ivy' %}
+(use-package avy
+  :bind
+  ("C-c SPC" . avy-goto-char))
+{% else %}
 (use-package ace-jump-mode
   :bind
   ("C-c SPC" . ace-jump-mode))
+{% endif %}
 
 (use-package company
   :config
@@ -166,8 +172,14 @@
 
 (use-package smartparens)
 
+(use-package smex)
+
 (use-package undo-tree
   :config
+  ;; Remember undo history
+  (setq
+   undo-tree-auto-save-history nil
+   undo-tree-history-directory-alist `(("." . ,(concat temp-dir "/undo/"))))
   (global-undo-tree-mode 1))
 
 (use-package which-key

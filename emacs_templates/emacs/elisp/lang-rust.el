@@ -37,4 +37,4 @@
     (add-hook 'rust-mode-hook
               (lambda () (local-set-key (kbd "C-c <tab>") 'rust-format-buffer)))))
 
-(provide 'setup-rust)
+(provide 'lang-rust)
