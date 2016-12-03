@@ -21,11 +21,12 @@
 
   ;; hindent - format haskell code automatically
   ;; https://github.com/chrisdone/hindent
-  (use-package hindent
-    :diminish hindent-mode
-    :config
-    (add-hook 'haskell-mode-hook #'hindent-mode)
-    ;; reformat the buffer using hindent on save
-    (setq hindent-reformat-buffer-on-save t)))
+  (when (executable-find "hindent")
+    (use-package hindent
+      :diminish hindent-mode
+      :config
+      (add-hook 'haskell-mode-hook #'hindent-mode)
+      ;; reformat the buffer using hindent on save
+      (setq hindent-reformat-buffer-on-save t))))
 
 (provide 'lang-haskell)
