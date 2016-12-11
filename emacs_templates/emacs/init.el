@@ -11,7 +11,6 @@
 (require 'base-extensions)
 (require 'base-functions)
 (require 'base-global-keys)
-(require 'base-theme)
 {% for lang in languages %}
 (require 'lang-{{ lang }})
 {% endfor %}
