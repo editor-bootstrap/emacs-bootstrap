@@ -8,6 +8,7 @@
 
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
+(require 'use-package)
 
 (defconst private-dir  (expand-file-name "private" user-emacs-directory))
 (defconst temp-dir (format "%s/cache" private-dir)
