@@ -27,6 +27,8 @@
 
 
 (use-package pyenv-mode
+  :if
+  (executable-find "pyenv")
   :init
   (add-to-list 'exec-path "~/.pyenv/shims")
   (setenv "WORKON_HOME" "~/.pyenv/versions/")
