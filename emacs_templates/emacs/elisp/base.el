@@ -66,6 +66,9 @@
  backup-directory-alist            `((".*" . ,(concat temp-dir "/backup/")))
  auto-save-file-name-transforms    `((".*" ,(concat temp-dir "/auto-save-list/") t)))
 
+(unless (file-exists-p (concat temp-dir "/auto-save-list"))
+		       (make-directory (concat temp-dir "/auto-save-list") :parents))
+
 (fset 'yes-or-no-p 'y-or-n-p)
 (global-auto-revert-mode t)
 
