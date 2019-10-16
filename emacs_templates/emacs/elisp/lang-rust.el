@@ -13,7 +13,9 @@
 
     ;; cargo-mode for all the cargo related operations
     ;; https://github.com/kwrooijen/cargo.el
-    (use-package cargo)
+    (use-package cargo
+      :bind
+      ("C-c C-c C-n" . cargo-process-new))
 
     ;; racer-mode for getting IDE like features for rust-mode
     ;; https://github.com/racer-rust/emacs-racer
