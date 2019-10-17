@@ -8,9 +8,9 @@ $(function () {
       var checkbox = $(this).find("input");
       var newState = null;
       if ($(this).data('component') === 'language') {
-	newState = checkbox.is(":checked") ? false : true;
+        newState = checkbox.is(":checked") ? false : true;
       } else {
-	newState = checkbox.attr("checked") == "checked" ? false : true;
+        newState = checkbox.attr("checked") == "checked" ? false : true;
       }
 
       if (checkbox.attr("type") == "radio"){
