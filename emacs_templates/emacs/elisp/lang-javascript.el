@@ -15,20 +15,21 @@
 
   (setq js-indent-level 2)
   (setq js2-indent-level 2)
-  (setq js2-basic-offset 2)
+  (setq js2-basic-offset 2))
 
   ;; tern :- IDE like features for javascript and completion
   ;; http://ternjs.net/doc/manual.html#emacs
   (use-package tern
+    :if
+    (executable-find "tern")
     :config
     (defun my-js-mode-hook ()
       "Hook for `js-mode'."
       (set (make-local-variable 'company-backends)
            '((company-tern company-files))))
     (add-hook 'js2-mode-hook 'my-js-mode-hook)
-    (add-hook 'js2-mode-hook 'company-mode))
-
-  (add-hook 'js2-mode-hook 'tern-mode)
+    (add-hook 'js2-mode-hook 'company-mode)
+    (add-hook 'js2-mode-hook 'tern-mode))
 
   ;; company backend for tern
   ;; http://ternjs.net/doc/manual.html#emacs
@@ -45,7 +46,7 @@
   (use-package js2-refactor :defer t
     :diminish js2-refactor-mode
     :config
-    (js2r-add-keybindings-with-prefix "C-c j r"))
-  (add-hook 'js2-mode-hook 'js2-refactor-mode))
+    (js2r-add-keybindings-with-prefix "C-c j r")
+    (add-hook 'js2-mode-hook 'js2-refactor-mode))
 
 (provide 'lang-javascript)
