@@ -6,11 +6,10 @@ $(function () {
     $(this).on('click', function() {
       var image = $(this).find(".logo-icon");
       var checkbox = $(this).find("input");
-      var newState = null;
+
+      var newState = checkbox.attr("checked") == "checked" ? false : true;
       if ($(this).data('component') === 'language') {
         newState = checkbox.is(":checked") ? false : true;
-      } else {
-        newState = checkbox.attr("checked") == "checked" ? false : true;
       }
 
       if (checkbox.attr("type") == "radio"){
