@@ -13,11 +13,15 @@
 
     ;; cargo-mode for all the cargo related operations
     ;; https://github.com/kwrooijen/cargo.el
-    (use-package cargo)
+    (use-package cargo
+      :hook (rust-mode . cargo-minor-mode)
+      :bind
+      ("C-c C-c C-n" . cargo-process-new))
 
     ;; racer-mode for getting IDE like features for rust-mode
     ;; https://github.com/racer-rust/emacs-racer
     (use-package racer
+      :hook (rust-mode . racer-mode)
       :config
       (progn
         ;; set racer rust source path environment variable
@@ -32,8 +36,6 @@
 
     (add-hook 'rust-mode-hook 'flycheck-mode)
     (add-hook 'flycheck-mode-hook 'flycheck-rust-setup)
-    (add-hook 'rust-mode-hook 'racer-mode)
-    (add-hook 'rust-mode-hook 'cargo-minor-mode)
 
     ;; format rust buffers on save using rustfmt
     (add-hook 'before-save-hook
