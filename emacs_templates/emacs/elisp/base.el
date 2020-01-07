@@ -80,6 +80,10 @@
 
 (show-paren-mode 1)
 
+;; Need to load custom file to avoid being overwritten
+;; more at https://www.gnu.org/software/emacs/manual/html_node/emacs/Saving-Customizations.html
+(load custom-file)
+
 ;; Delete trailing whitespace before save
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
