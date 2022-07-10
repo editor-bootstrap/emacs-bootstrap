@@ -1,3 +1,5 @@
+(use-package go-mode)
+
 (use-package lsp-mode
   :ensure t
   :commands (lsp lsp-deferred)

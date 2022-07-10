@@ -10,6 +10,7 @@
   (use-package elpy
     :init
     (add-to-list 'auto-mode-alist '("\\.py$" . python-mode))
+	(setq elpy-rpc-python-command "/usr/bin/python3")
     :config
     (setq elpy-rpc-backend "jedi")
     ;; (add-hook 'python-mode-hook 'py-autopep8-enable-on-save)
