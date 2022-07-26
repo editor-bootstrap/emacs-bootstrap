@@ -53,7 +53,7 @@ def generate_configs():
         root_dir=directory,
         base_dir='emacs.d'
     )
-    return send_from_directory(directory=directory, filename='emacs.d.zip')
+    return send_from_directory(directory=directory, path='emacs.d.zip')
 
 
 def _get_theme_package(theme_name):
